@@ -26,22 +26,9 @@ const makeGalleryCard = ({
   
   listEl.insertAdjacentHTML('afterbegin', markup);
 
-  listEl.addEventListener('click', event => {
-    event.preventDefault();
-
-    if (event.target.nodeName !== "IMG") {
-      return;
-    }
 
     let box = new SimpleLightbox('.gallery a', {
       captionsData: 'alt',
       captionDelay: 200,
     })
     
-  });
-
-  listEl.addEventListener('keydown', (evt) => {
-    if (evt.code === "Escape") {
-      instance.close();
-    }
-  });
